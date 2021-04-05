@@ -3,34 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/nav_home">
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/nav_home"
         android:name="com.android.example.pickreci.Home.Home"
         android:label="Welcome to Home"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/aboutUs"
+    <fragment 
+        android:id="@+id/nav_aboutus"
         android:name="com.android.example.pickreci.AboutUs.AboutUs"
         android:label="Welcome to AboutUs"
         tools:layout="@layout/fragment_about_us" />
     <fragment
-        android:id="@+id/myAccount"
+        android:id="@+id/nav_myaccount"
         android:name="com.android.example.pickreci.MyAccount.MyAccount"
         android:label="Welcome to MyAccount"
         tools:layout="@layout/fragment_my_account" />
     <fragment
-        android:id="@+id/cart"
+        android:id="@+id/nav_cart"
         android:name="com.android.example.pickreci.Cart.Cart"
         android:label="Welcome to Cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
-        android:id="@+id/orders"
+        android:id="@+id/nav_orders"
         android:name="com.android.example.pickreci.Orders.Orders"
         android:label="Welcome to Orders"
         tools:layout="@layout/fragment_orders" />
     <fragment
-        android:id="@+id/recipe"
+        android:id="@+id/nav_recipe"
         android:name="com.android.example.pickreci.Recipe.Recipe"
         android:label="Welcome to Home"
         tools:layout="@layout/fragment_recipe" />
