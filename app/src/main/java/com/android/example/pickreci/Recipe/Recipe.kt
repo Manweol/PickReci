@@ -1,58 +1,83 @@
 package com.android.example.pickreci.Recipe
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
+import com.android.example.pickreci.ItemViews.RecipeItem
+import com.android.example.pickreci.Models.RecipeModel
 import com.android.example.pickreci.R
+import com.android.example.pickreci.SpecificDetailsActivity
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Recipe.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Recipe : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var v: View
+    private lateinit var recyclerView : RecyclerView
+    val adapter = GroupAdapter<ViewHolder>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+    companion object {
+        const val TAG = "RecipeTag"
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipe, container, false)
+        v = inflater.inflate(R.layout.fragment_recipe, container, false)
+        init()
+        fetchRecipes()
+        initListeners()
+
+
+
+        return  v
+
+
+
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Recipe.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                Recipe().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    private fun initListeners() {
+        //adapter listener
+        adapter.setOnItemClickListener { item, view ->
+            val recipeItem = item as RecipeItem
+            val recipeClicked = recipeItem.recipe
+            val intent  = Intent(v.context, SpecificDetailsActivity::class.java )
+            intent.putExtra(TAG, recipeClicked)
+            startActivity(intent)
+        }
     }
+
+    private fun fetchRecipes() {
+        val adobo = RecipeModel(
+            uid = "1",
+            title =  "Adobo",
+            instructions = "The Moon is a barren, rocky world without air and water. It has dark lava plain on its surface. The Moon is filled wit craters. It has no light of its own. It gets its light from the Sun. The Moo keeps changing its shape as it moves round the Earth. It spins on its axis in 27.3 days stars were named after the Edwin Aldrin were the first ones to set their foot on the Moon on 21 July 1969 They reached the Moon in their space craft named Apollo II.",
+            ingredients = "The sun is a huge ball of gases. It has a diameter of 1,392,000 km. It is so huge that it can hold millions of planets inside it. The Sun is mainly made up of hydrogen and helium gas. The surface of the Sun is known as the photosphere. The photosphere is surrounded by a thin layer of gas known as the chromospheres. Without the Sun, there would be no life on Earth. There would be no plants, no animals and no human beings. As, all the living things on Earth get their energy from the Sun for their survival.",
+            imageURL = "https://panlasangpinoy.com/wp-content/uploads/2019/10/easy-chicken-adobo.jpg")
+        adapter.add(RecipeItem(adobo))
+        adapter.add(RecipeItem(adobo))
+        adapter.add(RecipeItem(adobo))
+        adapter.add(RecipeItem(adobo))
+        adapter.add(RecipeItem(adobo))
+        adapter.add(RecipeItem(adobo))
+        adapter.add(RecipeItem(adobo))
+
+    }
+
+    private fun init() {
+        recyclerView = v.findViewById(R.id.recyclerView_recipe)
+        recyclerView.addItemDecoration(DividerItemDecoration(v.context, DividerItemDecoration.VERTICAL))
+        recyclerView.adapter = adapter
+
+
+
+    }
+
 }

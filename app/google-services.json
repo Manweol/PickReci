@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "344332479759",
+    "project_id": "recipick-9e847",
+    "storage_bucket": "recipick-9e847.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344332479759:android:235996c4e023aa366e627a",
+        "android_client_info": {
+          "package_name": "com.android.example.pickreci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344332479759-h9ujj0iktls72lomvue5l6mh0ui23hic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNKO052KKClxlKEBIz4rQuaPQmTRtEddg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344332479759-h9ujj0iktls72lomvue5l6mh0ui23hic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
