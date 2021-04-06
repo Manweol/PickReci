@@ -2,36 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="nav_view">
-    <item
-            android:id="@+id/nav_home"
 
-            android:title="HOME"/>
     <item
-            android:id="@+id/nav_myaccount"
-
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="HOME"/>
+    <item
+        android:id="@+id/nav_myaccount"
+        android:icon="@drawable/myaccount"
         android:title="MY ACCOUNT"/>
     <item
         android:id="@+id/nav_recipe"
-
+        android:icon="@drawable/recipe"
         android:title="RECIPE"/>
     <item
         android:id="@+id/nav_orders"
-
+        android:icon="@drawable/orders"
         android:title="ORDERS"/>
     <item
         android:id="@+id/nav_cart"
-
+        android:icon="@drawable/cart"
         android:title="CART"/>
     <item
         android:id="@+id/nav_aboutus"
-
+        android:icon="@drawable/aboutus"
         android:title="ABOUT US"/>
 
 
 </menu>
-    <!-- android:icon="@drawable/ic_home_background"-->
-    <!--android:icon="@drawable/ic_myaccount_background"-->
-    <!-- android:icon="@drawable/ic_recipe_background"-->
-    <!-- android:icon="@drawable/ic_orders_background"-->
-    <!--android:icon="@drawable/ic_cart_background"-->
-    <!-- android:icon="@drawable/ic_aboutus_background"-->

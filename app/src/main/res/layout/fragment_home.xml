@@ -12,6 +12,6 @@
         android:textStyle="bold"
         android:textSize="32sp"
         android:gravity="center_vertical|center_horizontal"
-        android:text="Home" />
+        android:text="Home " />
 
 </FrameLayout>

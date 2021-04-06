@@ -5,7 +5,11 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
+                 <!--new style is created here-->
+    <style name="NewFontStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-smallcaps</item>
     </style>
 
 

@@ -7,31 +7,31 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.android.example.pickreci.Home.Home"
-        android:label="Welcome to Home"
+        android:label="RECIPICK"
         tools:layout="@layout/fragment_home" />
     <fragment 
         android:id="@+id/nav_aboutus"
         android:name="com.android.example.pickreci.AboutUs.AboutUs"
-        android:label="Welcome to AboutUs"
+        android:label="ABOUT US"
         tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/nav_myaccount"
         android:name="com.android.example.pickreci.MyAccount.MyAccount"
-        android:label="Welcome to MyAccount"
+        android:label="MY ACCOUNT"
         tools:layout="@layout/fragment_my_account" />
     <fragment
         android:id="@+id/nav_cart"
         android:name="com.android.example.pickreci.Cart.Cart"
-        android:label="Welcome to Cart"
+        android:label="CART"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/nav_orders"
         android:name="com.android.example.pickreci.Orders.Orders"
-        android:label="Welcome to Orders"
+        android:label="ORDERS"
         tools:layout="@layout/fragment_orders" />
     <fragment
         android:id="@+id/nav_recipe"
         android:name="com.android.example.pickreci.Recipe.Recipe"
-        android:label="Welcome to Home"
+        android:label="RECIPE"
         tools:layout="@layout/fragment_recipe" />
 </navigation>
