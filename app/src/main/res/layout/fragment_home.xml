@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Home.Home">
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_bg"
+        app:queryHint="SEARCH A RECIPE"
+        app:itemTextAppearance="@style/NewFontStyle"
+        android:layout_margin="16dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textStyle="bold"
         android:textSize="32sp"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Home " />
+        android:gravity="center_horizontal"
+        android:text="Recipe of the Day"/>
 
-</FrameLayout>
+
+
+
+</LinearLayout>
