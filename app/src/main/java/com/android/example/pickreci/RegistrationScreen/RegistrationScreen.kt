@@ -1,4 +1,4 @@
-package com.android.example.pickreci
+package com.android.example.pickreci.RegistrationScreen
 
 import android.app.Activity
 import android.content.DialogInterface
@@ -11,6 +11,7 @@ import android.util.Patterns
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.android.example.pickreci.Models.User
+import com.android.example.pickreci.R
 import com.google.android.gms.tasks.RuntimeExecutionException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

@@ -12,6 +12,13 @@
         <item name="android:fontFamily">sans-serif-smallcaps</item>
     </style>
 
+    <style name="ThemeOverlay.Search" parent="AppTheme">
+        <!-- Customize Theme Here -->
+        <item name="android:editTextColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/hintTextColor</item>
+
+    </style>
+
 
 
 </resources>

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.example.pickreci.ItemViews.RecipeItem
 import com.android.example.pickreci.Models.RecipeModel
 import com.android.example.pickreci.R
-import com.android.example.pickreci.SpecificDetailsActivity
+import com.android.example.pickreci.SpecificDetailsActivity.SpecificDetailsActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

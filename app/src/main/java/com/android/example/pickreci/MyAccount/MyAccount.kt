@@ -15,7 +15,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.android.example.pickreci.Models.User
 import com.android.example.pickreci.R
-import com.android.example.pickreci.RegistrationScreen
+import com.android.example.pickreci.RegistrationScreen.RegistrationScreen
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

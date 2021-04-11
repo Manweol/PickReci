@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.7.0'
     implementation 'com.google.firebase:firebase-auth:20.0.3'
     implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 
     def nav_version = "2.3.4"
     // Kotlin
@@ -73,5 +74,7 @@ dependencies {
     //justify
     implementation 'com.codesgood:justifiedtextview:1.1.0'
 
+    // slidable navigation
+    implementation 'com.yarolegovich:sliding-root-nav:1.1.1'
 
 }

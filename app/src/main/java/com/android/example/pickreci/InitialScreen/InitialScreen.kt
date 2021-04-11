@@ -1,4 +1,4 @@
-package com.android.example.pickreci
+package com.android.example.pickreci.InitialScreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,9 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.android.example.pickreci.MainActivity
+import com.android.example.pickreci.R
+import com.android.example.pickreci.RegistrationScreen.RegistrationScreen
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 

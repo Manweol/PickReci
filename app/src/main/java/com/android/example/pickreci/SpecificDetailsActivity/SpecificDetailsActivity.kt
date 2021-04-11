@@ -1,4 +1,4 @@
-package com.android.example.pickreci
+package com.android.example.pickreci.SpecificDetailsActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.android.example.pickreci.Models.RecipeModel
+import com.android.example.pickreci.R
 import com.android.example.pickreci.Recipe.Recipe
 import com.squareup.picasso.Picasso
 
