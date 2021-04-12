@@ -8,7 +8,6 @@ import kotlinx.android.parcel.Parcelize
 @IgnoreExtraProperties
 class RecipeModel (val uid: String? = "",
                    val title: String? = "",
-                   val instructions: String? = "",
                    val type: String = "",
                    val imageURL: String? = "" ):Parcelable {
 }

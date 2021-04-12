@@ -1,5 +1,6 @@
 package com.android.example.pickreci
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -7,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.example.pickreci.ItemViews.RecipeItem
 import com.android.example.pickreci.ItemViews.TypeItem
 import com.android.example.pickreci.Models.RecipeModel
+import com.android.example.pickreci.Recipe.Recipe
+import com.android.example.pickreci.SpecificDetailsActivity.SpecificDetailsActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -50,6 +53,13 @@ class SpecificRecipePerType : AppCompatActivity() {
                         adapter.add(RecipeItem(recipeData))
                     }
                 }
+
+                adapter.setOnItemClickListener { item, view ->
+                    val recipeItem = item as RecipeItem
+                    val intent = Intent(this@SpecificRecipePerType, SpecificDetailsActivity::class.java)
+                    intent.putExtra(Recipe.TAG, recipeItem.recipe )
+                    startActivity(intent)
+                }
             }
             override fun onCancelled(error: DatabaseError) {
             }
@@ -61,5 +71,8 @@ class SpecificRecipePerType : AppCompatActivity() {
         recyclerView.adapter =  adapter
         toolBar = findViewById(R.id.toolbar2)
 
+    }
+    companion object {
+        const val TAG = "SpecificRecipePerTypeActivity"
     }
 }
