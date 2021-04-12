@@ -75,7 +75,7 @@ import com.google.firebase.auth.FirebaseAuth
             showDialog()
             true
         }
-            val search = findViewById<SearchView>(R.id.searchView)
+
 
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
 

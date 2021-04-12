@@ -9,6 +9,6 @@ import kotlinx.android.parcel.Parcelize
 class RecipeModel (val uid: String? = "",
                    val title: String? = "",
                    val instructions: String? = "",
-                   val ingredients: String? = "",
+                   val type: String = "",
                    val imageURL: String? = "" ):Parcelable {
 }

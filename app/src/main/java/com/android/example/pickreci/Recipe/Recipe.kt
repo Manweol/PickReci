@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.pickreci.ItemViews.RecipeItem
@@ -36,10 +37,14 @@ class Recipe : Fragment() {
         v = inflater.inflate(R.layout.fragment_recipe, container, false)
         init()
         fetchRecipes()
-
+        setTitle()
         return  v
 
 
+    }
+
+    private fun setTitle() {
+        (activity as AppCompatActivity)!!.supportActionBar!!.title = ""
     }
 
     private fun fetchRecipes() {
@@ -77,6 +82,11 @@ class Recipe : Fragment() {
 
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity)!!.supportActionBar!!.title = ""
     }
 
 }

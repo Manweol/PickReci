@@ -11,7 +11,7 @@ import com.xwray.groupie.ViewHolder
 class RecipeItem ( val recipe: RecipeModel): Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         //title
-        viewHolder.itemView.findViewById<TextView>(R.id.recipeTextView).text = recipe.title
+        viewHolder.itemView.findViewById<TextView>(R.id.textView6).text = recipe.title
         //image
         val recipeImage = viewHolder.itemView.findViewById<ImageView>(R.id.recipeImageView)
         //load image url to the image view

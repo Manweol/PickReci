@@ -9,25 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        <activity android:name=".SplashActivity"/>
-
-        <activity android:name=".MainActivity"/>
-
-        <activity android:name=".RegistrationScreen.RegistrationScreen"/>
-
+        <activity android:name=".SpecificRecipePerType"></activity>
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name=".SpecificDetailsActivity.SpecificDetailsActivity" />
-        <!--Mainactivity-->
     </application>
 
 </manifest>
-    <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar"-->

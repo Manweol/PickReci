@@ -37,7 +37,6 @@ class SpecificDetailsActivity : AppCompatActivity() {
     private fun changeValues(recipe: RecipeModel) {
 
         Picasso.get().load(recipe.imageURL).into(image)
-        ingredients.text = recipe.ingredients
         instructions.text = recipe.instructions
         title.text = recipe.title
     }
