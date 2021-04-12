@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:queryHint="Enter the ingredient or the recipe"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView_recipe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
