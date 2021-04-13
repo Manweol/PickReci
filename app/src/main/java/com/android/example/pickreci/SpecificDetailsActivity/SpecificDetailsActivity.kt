@@ -24,6 +24,7 @@ class SpecificDetailsActivity : AppCompatActivity() {
     private lateinit var backBtn: ImageButton
     private lateinit var slider: ImageSlider
     private lateinit var listView: ListView
+    private lateinit var titleTv: TextView
     var instructionsList: ArrayList<String> = ArrayList()
     var ingredientsList: ArrayList<String> = ArrayList()
     lateinit var instructionsAdapter: ArrayAdapter <String>
@@ -36,6 +37,7 @@ class SpecificDetailsActivity : AppCompatActivity() {
         initBackBtnListener()
         initImageSlider(recipe)
         fetchInstructions(recipe)
+        setRecipeTitle(recipe.title)
 
         //btn listeners
         instructionsBtn.setOnClickListener {
@@ -45,6 +47,10 @@ class SpecificDetailsActivity : AppCompatActivity() {
             fetchIngredients(recipe)
         }
 
+    }
+
+    private fun setRecipeTitle(title: String?) {
+        titleTv.text=  title.toString()
     }
 
     private fun fetchInstructions(recipe: RecipeModel) {
@@ -110,6 +116,7 @@ class SpecificDetailsActivity : AppCompatActivity() {
 
 
     private fun init() {
+        titleTv = findViewById(R.id.title_recipe)
         slider = findViewById(R.id.slider)
         backBtn = findViewById(R.id.imageButton)
         instructionsBtn= findViewById(R.id.button5_instructions)

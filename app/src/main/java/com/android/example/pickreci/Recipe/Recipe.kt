@@ -31,8 +31,6 @@ class Recipe : Fragment() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var searchView: SearchView
     val adapter = GroupAdapter<ViewHolder>()
-    val adapter2 = GroupAdapter<ViewHolder>()
-    //sampol lang
     var arrayList: ArrayList<String> = ArrayList()
 
 
@@ -59,7 +57,6 @@ class Recipe : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchView.clearFocus()
-                //fetch ingredients based from query
                 fetchQuery(query!!)
                 return false
             }
@@ -67,6 +64,8 @@ class Recipe : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText.isNullOrEmpty()) {
                     fetchRecipes()
+                } else {
+                    fetchQuery(newText)
                 }
                 return false
             }
@@ -75,21 +74,28 @@ class Recipe : Fragment() {
     }
 
     private fun fetchQuery(query: String) {
+
         val ref = FirebaseDatabase.getInstance().getReference("ingredient")
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 arrayList.clear()
+                //Check every recipe within the "ingredient" node.
                 snapshot.children.forEach { recipe ->
+                    //check every ingredient in the "recipe" node.
                     recipe.children.forEach { ingredient ->
-                        if (ingredient.value.toString().equals(query!!, ignoreCase = true)) {
+                        //if the query string is contained within the value of ingredient,
+                        //add the recipe key to the array list of string.
+                        if (ingredient.value.toString().contains(query!!, ignoreCase = true)) {
                             arrayList.add(recipe.key.toString())
                         }
                     }
 
                 }
-                //fetch recipe with that ingredients
+                //Array list of recipe keys is not null or empty.
                 if (arrayList.isNotEmpty()) {
                     adapter.clear()
+                    //Fetch data of each recipe using the recipe key stored in the array list,
+                    // attach it to the adapter, and display in the recycler view.
                     arrayList.forEach { recipeUid ->
                         val ref2 = FirebaseDatabase.getInstance().getReference("recipe/$recipeUid")
                         ref2.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -110,18 +116,27 @@ class Recipe : Fragment() {
                             }
                         })
                     }
+                //Array list of recipe keys is null or empty.
+                // This "else" statement is only executed if there are no ingredients found that matches the query string.
+                // This fetches all the title that contains the query string.
                 } else {
                     val ref3= FirebaseDatabase.getInstance().getReference("recipe")
                     ref3.addListenerForSingleValueEvent(object: ValueEventListener{
                         override fun onDataChange(snapshot: DataSnapshot) {
+                            //Check every recipe stored within the database.
                             snapshot.children.forEach { recipe ->
                                 val recipeData = recipe.getValue(RecipeModel::class.java)
+                                //if the title of the recipe contains the query string,
+                                // store the uid in the array list.
                                 if (recipeData!!.title!!.contains(query, ignoreCase = true)){
                                     arrayList.add(recipeData.uid.toString())
                                 }
                             }
+                            // if array list is not empty.
                             if (arrayList.isNotEmpty()){
                                 adapter.clear()
+                                //Fetch data of each recipe using the recipe uid stored in the array list,
+                                // attach it to the adapter, and display in the recycler view.
                                 arrayList.forEach { recipeUid ->
                                     val ref4 = FirebaseDatabase.getInstance().getReference("recipe/${recipeUid}")
                                     ref4.addListenerForSingleValueEvent(object: ValueEventListener{
@@ -140,6 +155,7 @@ class Recipe : Fragment() {
                                         }
                                     })
                                 }
+                            // No data recipe or ingredient found using the query string.
                             } else {
                                 Toast.makeText(v.context, "No ${query} found.", Toast.LENGTH_SHORT).show()
                                 fetchRecipes()
