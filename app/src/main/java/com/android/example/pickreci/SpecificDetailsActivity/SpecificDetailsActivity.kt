@@ -33,7 +33,7 @@ class SpecificDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_specific_details)
         val recipe = intent.getParcelableExtra<RecipeModel>(Recipe.TAG)!!
         init()
-        initListeners()
+        initBackBtnListener()
         initImageSlider(recipe)
         fetchInstructions(recipe)
 
@@ -100,7 +100,7 @@ class SpecificDetailsActivity : AppCompatActivity() {
 
 
 
-    private fun initListeners() {
+    private fun initBackBtnListener() {
         backBtn.setOnClickListener {
             finish()
         }

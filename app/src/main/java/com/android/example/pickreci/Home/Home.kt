@@ -40,6 +40,7 @@ class Home : Fragment() {
 
 
     private fun initTypeItemView() {
+        adapter.clear()
         adapter.add(TypeItem((Constants.BREAKFAST), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.LUNCH), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.DINNER), R.drawable.type_bf))
@@ -57,10 +58,10 @@ class Home : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as AppCompatActivity)!!.supportActionBar!!.title = ""
+        setTitle()
     }
 
     private fun setTitle() {
-        (activity as AppCompatActivity)!!.supportActionBar!!.title = ""
+        (activity as AppCompatActivity)!!.supportActionBar!!.title = "HOME"
     }
 }
