@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             app:navigationIcon="@drawable/nav_icon"
-            app:logo="@drawable/label"
             app:popupTheme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
 
     </com.google.android.material.appbar.AppBarLayout>
