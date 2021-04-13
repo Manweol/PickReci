@@ -6,27 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
     android:background="@color/colorAccent"
     tools:context=".MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:contentInsetLeft="@drawable/notification"
+
                 app:navigationIcon="@drawable/nav_icon"
-                app:popupTheme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+                app:logo="@drawable/label"
+                app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+
+
 
         </com.google.android.material.appbar.AppBarLayout>
 
 
     <include layout="@layout/content_main" />
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

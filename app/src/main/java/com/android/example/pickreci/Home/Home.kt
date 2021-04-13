@@ -44,7 +44,7 @@ class Home : Fragment() {
         adapter.add(TypeItem((Constants.BREAKFAST), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.LUNCH), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.DINNER), R.drawable.type_bf))
-        adapter.add(TypeItem((Constants.MIRYENDA), R.drawable.type_bf))
+        adapter.add(TypeItem((Constants.MERYENDA), R.drawable.type_bf))
     }
 
     private fun init() {

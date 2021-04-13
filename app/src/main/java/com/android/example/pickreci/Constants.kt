@@ -5,7 +5,7 @@ class Constants {
         const val BREAKFAST = "breakfast"
         const val LUNCH = "lunch"
         const val DINNER = "dinner"
-        const val MIRYENDA = "miryenda"
+        const val MERYENDA = "meryenda"
 
     }
 }
