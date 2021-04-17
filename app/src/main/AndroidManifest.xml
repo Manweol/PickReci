@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SpecificRecipePerType" />
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".SplashScreenActivityActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen">
