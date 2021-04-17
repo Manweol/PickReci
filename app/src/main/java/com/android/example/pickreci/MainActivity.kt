@@ -76,6 +76,7 @@ import com.google.firebase.auth.FirebaseAuth
             true
         }
 
+//splash screen
 
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
 
@@ -136,6 +137,8 @@ import com.google.firebase.auth.FirebaseAuth
         val alert = dialogBuilder.create()
         alert.setTitle("Sign out")
         alert.show()
+
+
 
     }
 
