@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@color/colorAccent"
+    android:background="#C2E8CA"
     tools:context=".MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -20,12 +20,12 @@
                 android:layout_width="match_parent"
 
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimary"
+                android:background="#16C172"
                 app:contentInsetLeft="@drawable/notification"
 
-                app:navigationIcon="@drawable/nav_icon"
                 app:logo="@drawable/label"
-                app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar"/>
+                app:navigationIcon="@drawable/nav_icon"
+                app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar" />
 
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,40 +12,74 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="@color/colorAccent"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_below="@+id/recipicklogo" />
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="362dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/recipicklogo"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipicklogo" />
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_below="@+id/editTextTextEmailAddress"/>
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="362dp"
+        android:layout_height="46dp"
+        android:layout_below="@+id/editTextTextEmailAddress"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:layout_below="@+id/editTextTextPassword" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="222dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editTextTextPassword"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/background"
+        android:shadowColor="#000000"
+        android:shadowRadius="2"
+        android:elevation="20dp"
+        android:text="LOGIN"
+        android:fontFamily="@font/cafe_font"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="REGISTER"
-            android:layout_below="@+id/button2" />
-    </RelativeLayout>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="219dp"
+        android:layout_height="51dp"
+        android:layout_below="@+id/button2"
+        android:background="@drawable/background"
+        android:shadowColor="#000000"
+        android:fontFamily="@font/cafe_font"
+        android:textSize="20sp"
+        android:elevation="20dp"
+        android:shadowRadius="2"
+        android:text="REGISTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.191" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
         <activity android:name=".Admin.AddRecipeActivity"></activity>
-        <activity android:name=".Admin.AdminActivity">
+                <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,7 @@
         </activity>
         <activity android:name=".SpecificRecipePerType" />
         <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Admin.AdminActivity"/>
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen">
 
