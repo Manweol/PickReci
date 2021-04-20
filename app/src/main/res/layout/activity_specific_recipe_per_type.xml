@@ -22,6 +22,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvagain"
         android:layout_width="match_parent"
+        android:background="#C2E8CA"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

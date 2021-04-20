@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FFFFFF"
     android:layout_height="match_parent"
     tools:context=".Admin.AdminActivity">
 
@@ -20,9 +21,14 @@
 
     <Button
         android:id="@+id/btn_admin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="371dp"
+        android:layout_height="47dp"
+        android:background="@drawable/background"
+        android:elevation="20dp"
+        android:fontFamily="@font/cafe_font"
         android:text="ADD RECIPE"
+        android:textSize="23sp"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

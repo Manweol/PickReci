@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C2E8CA"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Recipe.Recipe">
 
@@ -16,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:background="#278F8E8E"
+            android:elevation="10dp"
             android:queryHint="Enter the ingredient or the recipe"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView_recipe"
             app:layout_constraintEnd_toEndOf="parent"

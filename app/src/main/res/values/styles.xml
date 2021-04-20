@@ -9,7 +9,7 @@
 
                  <!--new style is created here-->
     <style name="NewFontStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">sans-serif-smallcaps</item>
+        <item name="android:fontFamily">@font/cafe_font</item>
     </style>
 
     <style name="ThemeOverlay.Search" parent="AppTheme">

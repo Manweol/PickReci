@@ -45,7 +45,8 @@
                 android:maxWidth="140dp"
                 android:text="TITLE"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:fontFamily="@font/cafe_font"
+                android:textSize="35sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
