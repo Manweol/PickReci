@@ -9,11 +9,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        >
+        android:supportsRtl="true">
 
         <activity android:name=".Admin.AddRecipeActivity"></activity>
-                <activity android:name=".MainActivity">
+                <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SpecificRecipePerType" />
-        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Admin.AdminActivity"/>
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen">
@@ -32,3 +31,9 @@
     </application>
 
 </manifest>
+
+<!--
+<activity android:name=".SplashScreenActivity" />
+<activity android:name=".MainActivity" />
+<activity android:name=".Admin.AdminActivity" />
+-->
