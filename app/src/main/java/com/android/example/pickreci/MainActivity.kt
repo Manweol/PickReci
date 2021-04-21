@@ -23,10 +23,6 @@ import com.google.firebase.auth.FirebaseAuth
 
   class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-
-
-
-
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
@@ -137,8 +133,6 @@ import com.google.firebase.auth.FirebaseAuth
         val alert = dialogBuilder.create()
         alert.setTitle("Sign out")
         alert.show()
-
-
 
     }
 

@@ -47,9 +47,6 @@ class AddRecipeActivity : AppCompatActivity() {
     private lateinit var instructionsAdapter: ArrayAdapter<String>
     //constants
 
-
-
-
     companion object {
         const val IMAGE_PICK_CODE = 1001
         const val MULTIPLE_PICK_CODE = 1002
@@ -71,16 +68,8 @@ class AddRecipeActivity : AppCompatActivity() {
 
         if (!recipe.uid.isNullOrEmpty()){
             initValues(recipe)
-
         }
-
-
-
-
         initSave(recipe)
-
-
-
     }
 
     private fun initContextMenu() {
@@ -150,10 +139,7 @@ class AddRecipeActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
             }
         })
-
-
     }
-
 
     private fun initSave(recipe: RecipeModel) {
         save.setOnClickListener {
@@ -181,8 +167,6 @@ class AddRecipeActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
-
             //if everything's okay, upload to the database
             if (recipe.uid == null || recipe.uid == "") {
                 val ref = FirebaseDatabase.getInstance().getReference("recipe")
@@ -192,11 +176,8 @@ class AddRecipeActivity : AppCompatActivity() {
             } else {
                 uploadToFirebase(recipe.uid!!)
             }
-
-
         }
     }
-
 
 
     private fun uploadToFirebase(recipeUid: String) {
