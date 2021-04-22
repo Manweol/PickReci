@@ -12,7 +12,7 @@
         android:id="@+id/recipicklogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/logo"
         android:layout_centerInParent="true"
         android:background="@color/colorAccent"
@@ -20,9 +20,9 @@
     <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         android:layout_below="@+id/recipicklogo"
-        android:indeterminateTint="@android:color/black"/>
+        android:indeterminateTint="@android:color/white"/>
 
 
 

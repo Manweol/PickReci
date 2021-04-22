@@ -180,12 +180,11 @@ class RegistrationScreen : AppCompatActivity() {
     private fun saveToDatabase(url: String) {
         val ref = FirebaseDatabase.getInstance().getReference("users/${user!!.uid}")
         val userModel = User(
-            uid = user!!.uid,
-            imageURL = url,
-            age = age.text.toString().toInt(),
+            name = name.text.toString(),
             email = email.text.toString(),
             number = number.text.toString().toInt(),
-            name = name.text.toString()
+            age = age.text.toString().toInt(),
+            imageURL = url
         )
         ref.setValue(userModel)
 

@@ -18,12 +18,8 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-
                 android:layout_height="?attr/actionBarSize"
                 android:background="#16C172"
-                app:contentInsetLeft="@drawable/notification"
-
-                app:logo="@drawable/label"
                 app:navigationIcon="@drawable/nav_icon"
                 app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar" />
 

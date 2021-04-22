@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -57,7 +58,7 @@ class MyAccount : Fragment() {
 
     private fun fetchUserData() {
         val currentUserUid = FirebaseAuth.getInstance().currentUser.uid
-        val ref = FirebaseDatabase.getInstance().getReference("users/${currentUserUid}")
+        val ref = FirebaseDatabase.getInstance().getReference("users/$currentUserUid")
         ref.addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val currentUserData = snapshot.getValue(User::class.java)
@@ -97,7 +98,7 @@ class MyAccount : Fragment() {
     private fun executeUpdate() {
         if (selectedPhotoUri != null) {
             val fileName = UUID.randomUUID().toString()
-            val ref = FirebaseStorage.getInstance().getReference("/profile-images/$fileName")
+            val ref = FirebaseStorage.getInstance().getReference("/profile-images/${fileName}")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
                     ref.downloadUrl.addOnSuccessListener { url ->
@@ -126,7 +127,7 @@ class MyAccount : Fragment() {
         ref.child("age").setValue(age.text.toString().toInt())
         ref.child("number").setValue(number.text.toString().toInt())
         ref.child("email").setValue(email.text.toString())
-        Toast.makeText(v.context, "Account successfuly updated.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(v.context, "Account successfully updated.", Toast.LENGTH_SHORT).show()
     }
 
     private fun changeIsEnabledAttribute(text: String) {
@@ -190,8 +191,11 @@ class MyAccount : Fragment() {
         }
     }
 
+
+
     companion object {
         const val UPDATE_TEXT = "UPDATE"
         const val SAVE_TEXT = "SAVE"
     }
 }
+

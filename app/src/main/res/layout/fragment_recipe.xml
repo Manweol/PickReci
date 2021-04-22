@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:background="#278F8E8E"
+            android:background="@drawable/custom_bg"
             android:elevation="10dp"
             android:queryHint="Enter the ingredient or the recipe"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView_recipe"
@@ -37,3 +37,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
+<!--android:background="#278F8E8E"-->

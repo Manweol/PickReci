@@ -11,7 +11,8 @@
         android:supportsRtl="true">
 
         <activity android:name=".Admin.AddRecipeActivity"></activity>
-                <activity android:name=".SplashScreenActivity">
+
+             <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
