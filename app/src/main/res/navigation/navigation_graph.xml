@@ -8,12 +8,8 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.android.example.pickreci.Home.Home"
+        android:label="HOME"
         tools:layout="@layout/fragment_home" />
-    <fragment 
-        android:id="@+id/nav_aboutus"
-        android:name="com.android.example.pickreci.AboutUs.AboutUs"
-        android:label="ABOUT US"
-        tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/nav_myaccount"
         android:name="com.android.example.pickreci.MyAccount.MyAccount"

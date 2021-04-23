@@ -23,7 +23,7 @@
         android:id="@+id/btn_admin"
         android:layout_width="371dp"
         android:layout_height="47dp"
-        android:background="@drawable/background"
+        android:backgroundTint="#2e7d32"
         android:elevation="20dp"
         android:fontFamily="@font/cafe_font"
         android:text="ADD RECIPE"

@@ -3,8 +3,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_myaccount">MyAccount</string>
     <string name="menu_recipe">Recipe</string>
-    <string name="menu_orders">Orders</string>
-    <string name="menu_cart">Cart</string>
-    <string name="menu_aboutus">Aboutus</string>
+
 
 </resources>

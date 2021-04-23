@@ -61,7 +61,7 @@ import com.google.firebase.auth.FirebaseAuth
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-           R.id.nav_home, R.id.nav_myaccount,  R.id.nav_recipe, R.id.nav_aboutus), drawerLayout)
+           R.id.nav_home, R.id.nav_myaccount,  R.id.nav_recipe,), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
@@ -98,10 +98,6 @@ import com.google.firebase.auth.FirebaseAuth
             R.id.nav_recipe -> {
                 Toast.makeText(this, "Recipe Clicked", Toast.LENGTH_SHORT).show()
             }
-            R.id.nav_aboutus -> {
-                Toast.makeText(this, "About Us Clicked", Toast.LENGTH_SHORT).show()
-            }
-
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

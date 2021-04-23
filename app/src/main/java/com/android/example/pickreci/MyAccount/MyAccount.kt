@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.android.example.pickreci.MainActivity.Companion.TAG
 import com.android.example.pickreci.Models.User
 import com.android.example.pickreci.R
 import com.android.example.pickreci.RegistrationScreen.RegistrationScreen
@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import java.util.*
+
 
 
 class MyAccount : Fragment() {
@@ -50,15 +51,12 @@ class MyAccount : Fragment() {
         fetchUserData()
         initListeners()
 
-
-
-
         return v
     }
 
     private fun fetchUserData() {
         val currentUserUid = FirebaseAuth.getInstance().currentUser.uid
-        val ref = FirebaseDatabase.getInstance().getReference("users/$currentUserUid")
+        val ref = FirebaseDatabase.getInstance().getReference("users/${currentUserUid}")
         ref.addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val currentUserData = snapshot.getValue(User::class.java)
@@ -98,7 +96,7 @@ class MyAccount : Fragment() {
     private fun executeUpdate() {
         if (selectedPhotoUri != null) {
             val fileName = UUID.randomUUID().toString()
-            val ref = FirebaseStorage.getInstance().getReference("/profile-images/${fileName}")
+            val ref = FirebaseStorage.getInstance().getReference("/profile-images/$fileName")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
                     ref.downloadUrl.addOnSuccessListener { url ->

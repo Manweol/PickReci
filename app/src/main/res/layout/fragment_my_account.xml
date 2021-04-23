@@ -59,7 +59,7 @@
                     android:layout_marginTop="36dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/myaccount"
-                    app:civ_border_color="#5DE325"
+                    app:civ_border_color="#005005"
                     app:civ_border_width="3dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -119,26 +119,18 @@
                     android:id="@+id/btn_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#005005"
                     android:elevation="30dp"
+                    android:fontFamily="@font/cafe_font"
                     android:shadowColor="#000000"
                     android:shadowRadius="2"
                     android:text="UPDATE"
                     android:textSize="30sp"
-                    android:fontFamily="@font/cafe_font"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
                     app:layout_constraintStart_toStartOf="parent" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@android:color/transparent"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView4"
-                    app:srcCompat="@drawable/ic_back" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
