@@ -15,6 +15,10 @@
         android:id="@+id/nav_recipe"
         android:icon="@drawable/recipe"
         android:title="RECIPE"/>
+    <item
+        android:id="@+id/nav_palengke"
+        android:icon="@drawable/recipe"
+        android:title="Market"/>
 
     <item
         android:id="@+id/logout"

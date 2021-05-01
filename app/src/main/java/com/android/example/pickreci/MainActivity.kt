@@ -39,7 +39,7 @@ import com.google.firebase.auth.FirebaseAuth
 
         checkIfLoggedIn()
 
-        toolbar = findViewById(R.id.toolbar)
+       toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         drawerLayout = findViewById(R.id.drawer_layout)

@@ -21,4 +21,9 @@
         android:name="com.android.example.pickreci.Recipe.Recipe"
         android:label="RECIPE"
         tools:layout="@layout/fragment_recipe" />
+    <fragment
+        android:id="@+id/nav_palengke"
+        android:name="com.android.example.pickreci.Palengke"
+        android:label="MARKET"
+        tools:layout="@layout/fragment_palengke" />
 </navigation>

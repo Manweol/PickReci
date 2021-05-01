@@ -11,18 +11,30 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round">
 
-        <activity android:name=".Admin.AddRecipeActivity"></activity>
+        <activity android:name=".Admin.AddRecipeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-             <activity android:name=".SplashScreenActivity">
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="github.com"
+                    android:pathPrefix="/recipe/" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Admin.AdminActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SpecificRecipePerType" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Admin.AdminActivity"/>
+        <activity android:name=".SpecificRecipePerType"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SplashScreenActivity" />
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen">
 
@@ -33,7 +45,7 @@
 
 </manifest>
 
-<!--
+    <!--
 <activity android:name=".SplashScreenActivity" />
 <activity android:name=".MainActivity" />
 <activity android:name=".Admin.AdminActivity" />

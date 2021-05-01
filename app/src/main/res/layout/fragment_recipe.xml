@@ -19,7 +19,7 @@
             android:layout_margin="20dp"
             android:background="@drawable/custom_bg"
             android:elevation="10dp"
-            android:queryHint="Enter the ingredient or the recipe"
+            android:queryHint="Search Recipe"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView_recipe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
