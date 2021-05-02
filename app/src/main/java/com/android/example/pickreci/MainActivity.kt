@@ -76,6 +76,8 @@ import com.google.firebase.auth.FirebaseAuth
 
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
 
+
+
     }
 
     private fun checkIfLoggedIn() {
@@ -97,6 +99,15 @@ import com.google.firebase.auth.FirebaseAuth
             }
             R.id.nav_recipe -> {
                 Toast.makeText(this, "Recipe Clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_palengke -> {
+                Toast.makeText(this, "Market Clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_recipe -> {
+                Toast.makeText(this, "Cart Clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_recipe -> {
+                Toast.makeText(this, "Checkout Clicked", Toast.LENGTH_SHORT).show()
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)

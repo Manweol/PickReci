@@ -45,4 +45,5 @@ internal class MainAdapter(
         textView.text = numbersInWords[position]
         return convertView
     }
+
 }

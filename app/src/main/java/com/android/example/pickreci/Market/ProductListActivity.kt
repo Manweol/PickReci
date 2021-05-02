@@ -61,5 +61,33 @@ class ProductListActivity : AppCompatActivity() {
         }
 
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.nav_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.nav_cart -> {
+                val intent = Intent(this, CartActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.nav_recipe -> {
+                true
+            }
+            R.id.nav_palengke -> {
+                val intent = Intent(this , ProductsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.go_to_bills -> {
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
+    }
 
 }

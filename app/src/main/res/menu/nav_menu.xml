@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="nav_view">
 
     <item
@@ -17,8 +18,19 @@
         android:title="RECIPE"/>
     <item
         android:id="@+id/nav_palengke"
-        android:icon="@drawable/recipe"
-        android:title="Market"/>
+        android:icon="@drawable/ic_outline_shopping_bag_24"
+        android:title="MARKET"/>
+
+    <item
+        android:id="@+id/nav_cart"
+        android:icon="@drawable/ic_outline_shopping_cart_24"
+        android:title="CART"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/go_to_bills"
+        android:icon="@drawable/ic_outline_attach_money_24"
+        android:title="CHECKOUT"></item>
 
     <item
         android:id="@+id/logout"

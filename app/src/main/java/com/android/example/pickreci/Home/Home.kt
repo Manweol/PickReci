@@ -1,14 +1,15 @@
 package com.android.example.pickreci.Home
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.pickreci.Constants
 import com.android.example.pickreci.ItemViews.TypeItem
+import com.android.example.pickreci.Market.CartActivity
+import com.android.example.pickreci.Market.ProductsActivity
 import com.android.example.pickreci.R
 import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter
@@ -18,7 +19,7 @@ import com.xwray.groupie.ViewHolder
 class Home : Fragment() {
 
 
-    private lateinit var recyclerView : RecyclerView
+    private lateinit var recyclerView: RecyclerView
     var adapter = GroupAdapter<ViewHolder>()
     lateinit var v: View
 
@@ -31,7 +32,7 @@ class Home : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        v =  inflater.inflate(R.layout.fragment_home, container, false)
+        v = inflater.inflate(R.layout.fragment_home, container, false)
         init()
         initTypeItemView()
         setTitle()
@@ -62,6 +63,7 @@ class Home : Fragment() {
     }
 
     private fun setTitle() {
-        (activity as AppCompatActivity)!!.supportActionBar!!.title = "HOME"
+        (activity as AppCompatActivity)!!.supportActionBar!!.title = "RECIPICK"
     }
+
 }
