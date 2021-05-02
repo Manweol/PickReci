@@ -32,7 +32,7 @@ class MyAccount : Fragment() {
     private lateinit var image : ImageView
     private lateinit var name: EditText
     private lateinit var email: EditText
-    private lateinit var age: EditText
+    private lateinit var address: EditText
     private lateinit var number: EditText
     private lateinit var btn: Button
     private lateinit var v: View
@@ -63,7 +63,7 @@ class MyAccount : Fragment() {
                 name.setText(currentUserData!!.name)
                 email.setText(currentUserData!!.email)
                 number.setText(currentUserData!!.number.toString())
-                age.setText(currentUserData!!.age.toString())
+                address.setText(currentUserData!!.address)
                 Picasso.get().load(currentUserData.imageURL).into(image)
             }
             override fun onCancelled(error: DatabaseError) {
@@ -107,7 +107,7 @@ class MyAccount : Fragment() {
             val currentUserUid = FirebaseAuth.getInstance().currentUser.uid
             val ref = FirebaseDatabase.getInstance().getReference("users/$currentUserUid")
             ref.child("name").setValue(name.text.toString())
-            ref.child("age").setValue(age.text.toString().toInt())
+            ref.child("address").setValue(address.text.toString().toInt())
             ref.child("number").setValue(number.text.toString().toInt())
             ref.child("email").setValue(email.text.toString())
             Toast.makeText(v.context, "Account successfuly updated.", Toast.LENGTH_SHORT).show()
@@ -122,7 +122,7 @@ class MyAccount : Fragment() {
         val ref = FirebaseDatabase.getInstance().getReference("users/$currentUserUid")
         ref.child("imageURL").setValue(url)
         ref.child("name").setValue(name.text.toString())
-        ref.child("age").setValue(age.text.toString().toInt())
+        ref.child("address").setValue(address.text.toString().toInt())
         ref.child("number").setValue(number.text.toString().toInt())
         ref.child("email").setValue(email.text.toString())
         Toast.makeText(v.context, "Account successfully updated.", Toast.LENGTH_SHORT).show()
@@ -133,13 +133,13 @@ class MyAccount : Fragment() {
             btn.text = SAVE_TEXT
             image.isEnabled = true
             name.isEnabled = true
-            age.isEnabled = true
+            address.isEnabled = true
             number.isEnabled = true
         } else {
             btn.text = UPDATE_TEXT
             image.isEnabled = false
             name.isEnabled = false
-            age.isEnabled = false
+            address.isEnabled = false
             number.isEnabled = false
         }
     }
@@ -148,7 +148,7 @@ class MyAccount : Fragment() {
         image = v.findViewById(R.id.image_profile)
         name = v.findViewById(R.id.name_profile)
         email = v.findViewById(R.id.email_profile)
-        age = v.findViewById(R.id.age_profile)
+        address = v.findViewById(R.id.address_profile)
         number = v.findViewById(R.id.number_profile)
         btn = v.findViewById(R.id.btn_profile)
         btn.text = UPDATE_TEXT
@@ -157,7 +157,7 @@ class MyAccount : Fragment() {
 
         image.isEnabled = false
         name.isEnabled = false
-        age.isEnabled = false
+        address.isEnabled = false
         number.isEnabled = false
     }
 

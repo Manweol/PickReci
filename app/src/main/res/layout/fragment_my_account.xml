@@ -83,18 +83,18 @@
                     android:ems="10"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    app:layout_constraintBottom_toTopOf="@+id/age_profile"
+                    app:layout_constraintBottom_toTopOf="@+id/address_profile"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/name_profile" />
 
                 <EditText
-                    android:id="@+id/age_profile"
+                    android:id="@+id/address_profile"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Age"
+                    android:hint="Address"
                     android:inputType="number"
                     app:layout_constraintBottom_toTopOf="@+id/number_profile"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/age_profile" />
+                    app:layout_constraintTop_toBottomOf="@+id/address_profile" />
 
                 <Button
                     android:id="@+id/btn_profile"

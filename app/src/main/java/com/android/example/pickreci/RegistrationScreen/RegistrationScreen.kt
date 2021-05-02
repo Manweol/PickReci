@@ -22,7 +22,7 @@ import java.util.*
 class RegistrationScreen : AppCompatActivity() {
     private lateinit var name: EditText
     private lateinit var email: EditText
-    private lateinit var age: EditText
+    private lateinit var address: EditText
     private lateinit var number: EditText
     private lateinit var password: EditText
     private lateinit var retypePassword: EditText
@@ -30,7 +30,7 @@ class RegistrationScreen : AppCompatActivity() {
     private lateinit var image: ImageView
     private lateinit var backBtn : ImageButton
     private val auth = FirebaseAuth.getInstance()
-    private var user: FirebaseUser?= null
+    private var user: FirebaseUser? = null
 
     companion object {
         const val IMAGE_PICK_CODE = 1001
@@ -100,9 +100,9 @@ class RegistrationScreen : AppCompatActivity() {
             email.requestFocus()
             return
         }
-        if (age.text.toString().isEmpty()) {
-            age.error = "Enter age"
-            age.requestFocus()
+        if (address.text.toString().isEmpty()) {
+            address.error = "Enter age"
+            address.requestFocus()
             return
         }
         if(number.text.toString().isEmpty()){
@@ -183,7 +183,7 @@ class RegistrationScreen : AppCompatActivity() {
             name = name.text.toString(),
             email = email.text.toString(),
             number = number.text.toString().toInt(),
-            age = age.text.toString().toInt(),
+            address = address.text.toString(),
             imageURL = url
         )
         ref.setValue(userModel)
@@ -198,7 +198,7 @@ class RegistrationScreen : AppCompatActivity() {
         image = findViewById(R.id.imageView)
         name = findViewById(R.id.editTextTextPersonName)
         email= findViewById(R.id.editTextTextPersonName2)
-        age= findViewById(R.id.editTextTextPersonName3)
+        address= findViewById(R.id.editTextTextPersonName3)
         number= findViewById(R.id.editTextTextPersonName4)
         password= findViewById(R.id.textView)
         retypePassword= findViewById(R.id.textView3)

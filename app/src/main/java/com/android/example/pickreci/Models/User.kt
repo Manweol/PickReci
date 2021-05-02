@@ -11,7 +11,7 @@ class User(
     val name: String = "",
     val email: String? = "",
     val number: Int? = 0,
-    val age: Int? = 0,
+    val address: String? = "",
     val imageURL: String? = ""
 ): Parcelable {
 }
