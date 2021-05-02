@@ -28,7 +28,7 @@
         app:showAsAction="ifRoom"></item>
 
     <item
-        android:id="@+id/go_to_bills"
+        android:id="@+id/nav_checkout"
         android:icon="@drawable/ic_outline_attach_money_24"
         android:title="CHECKOUT"></item>
 

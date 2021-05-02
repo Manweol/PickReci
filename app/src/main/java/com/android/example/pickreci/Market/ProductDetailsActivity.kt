@@ -156,7 +156,7 @@ class ProductDetailsActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
-            R.id.go_to_bills -> {
+            R.id.nav_checkout -> {
                 true
             }
             else -> {
