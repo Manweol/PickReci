@@ -42,10 +42,13 @@ class Home : Fragment() {
 
     private fun initTypeItemView() {
         adapter.clear()
-        adapter.add(TypeItem((Constants.BREAKFAST), R.drawable.type_bf))
-        adapter.add(TypeItem((Constants.LUNCH), R.drawable.type_bf))
-        adapter.add(TypeItem((Constants.DINNER), R.drawable.type_bf))
+        adapter.add(TypeItem((Constants.BREAKFAST), R.drawable.breakfast))
+        adapter.add(TypeItem((Constants.LINNER), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.MERYENDA), R.drawable.type_bf))
+        adapter.add(TypeItem((Constants.SEAFOOD), R.drawable.seafood))
+        adapter.add(TypeItem((Constants.POULTRY), R.drawable.poultry))
+        adapter.add(TypeItem((Constants.SEASONING), R.drawable.seasonings))
+        adapter.add(TypeItem((Constants.VEGETABLES), R.drawable.vegetables))
     }
 
     private fun init() {
