@@ -42,6 +42,7 @@ class Home : Fragment() {
 
     private fun initTypeItemView() {
         adapter.clear()
+<<<<<<< HEAD
         adapter.add(TypeItem((Constants.BREAKFAST), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.LUNCHANDDINNER), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.MERYENDA), R.drawable.type_bf))
@@ -49,6 +50,15 @@ class Home : Fragment() {
         adapter.add(TypeItem((Constants.SEASONING), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.POULTRY), R.drawable.type_bf))
         adapter.add(TypeItem((Constants.VEGETABLES), R.drawable.type_bf))
+=======
+        adapter.add(TypeItem((Constants.BREAKFAST), R.drawable.breakfast))
+        adapter.add(TypeItem((Constants.LINNER), R.drawable.type_bf))
+        adapter.add(TypeItem((Constants.MERYENDA), R.drawable.type_bf))
+        adapter.add(TypeItem((Constants.SEAFOOD), R.drawable.seafood))
+        adapter.add(TypeItem((Constants.POULTRY), R.drawable.poultry))
+        adapter.add(TypeItem((Constants.SEASONING), R.drawable.seasonings))
+        adapter.add(TypeItem((Constants.VEGETABLES), R.drawable.vegetables))
+>>>>>>> e385fa669314b2cf4a10f5a156b7394185ab24af
     }
 
     private fun init() {
