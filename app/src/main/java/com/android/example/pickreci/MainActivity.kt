@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 
-  class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
@@ -39,7 +39,7 @@ import com.google.firebase.auth.FirebaseAuth
 
         checkIfLoggedIn()
 
-       toolbar = findViewById(R.id.toolbar)
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -47,7 +47,8 @@ import com.google.firebase.auth.FirebaseAuth
         navView = findViewById(R.id.nav_view)
 
         val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, 0, 0)
+            this, drawerLayout, toolbar, 0, 0
+        )
 
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -60,8 +61,11 @@ import com.google.firebase.auth.FirebaseAuth
         val navController = findNavController(R.id.nav_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(setOf(
-           R.id.nav_home, R.id.nav_myaccount,  R.id.nav_recipe,), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.nav_myaccount, R.id.nav_recipe,
+            ), drawerLayout
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
@@ -77,20 +81,19 @@ import com.google.firebase.auth.FirebaseAuth
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
 
 
-
     }
 
     private fun checkIfLoggedIn() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser == null) {
-           val intent = Intent(this, InitialScreen::class.java)
+            val intent = Intent(this, InitialScreen::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.nav_home -> {
                 Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show()
             }
@@ -119,12 +122,14 @@ import com.google.firebase.auth.FirebaseAuth
         dialogBuilder.setMessage("Do you want to sign out now?")
             .setCancelable(true)
             .setPositiveButton("Yes", DialogInterface.OnClickListener { _, _ ->
-               FirebaseAuth.getInstance().signOut()
+                FirebaseAuth.getInstance().signOut()
                 val intent = Intent(this, InitialScreen::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-                Toast.makeText(baseContext, "Signed out",
-                    Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    baseContext, "Signed out",
+                    Toast.LENGTH_LONG
+                ).show()
 
 
             })
