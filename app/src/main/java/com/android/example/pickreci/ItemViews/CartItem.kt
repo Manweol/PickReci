@@ -19,12 +19,15 @@ import com.xwray.groupie.ViewHolder
 import org.w3c.dom.Text
 
 class CartItem(val cartProduct: CartProduct): Item<ViewHolder>() {
-    private lateinit var v: View
-    private lateinit var image: ImageView
-    private lateinit var productName: TextView
-    private lateinit var productQuantity: TextView
-    private lateinit var totalPrice: TextView
-    private lateinit var actionButton: FloatingActionButton
+     lateinit var v: View
+     lateinit var image: ImageView
+    lateinit var productName: TextView
+     lateinit var productQuantity: TextView
+     lateinit var totalPrice: TextView
+     lateinit var actionButton: FloatingActionButton
+
+
+
 
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
@@ -34,6 +37,8 @@ class CartItem(val cartProduct: CartProduct): Item<ViewHolder>() {
         initFloatingActionButton()
 
     }
+
+
 
     private fun initFloatingActionButton() {
         actionButton.setOnClickListener {

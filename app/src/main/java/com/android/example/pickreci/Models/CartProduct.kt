@@ -8,7 +8,8 @@ class CartProduct(
     val uid: String? = "",
     val productUid: String? = "",
     val quantity: Int? = 0,
-    val totalPrice: Double? = 0.0
+    val totalPrice: Double? = 0.0,
+    val name: String? = ""
 ) :
     Parcelable {
 }

@@ -10,5 +10,7 @@ class Constants {
         const val SEASONING = "seasoning"
         const val VEGETABLES = "vegetables"
 
+        const val COD= "Cash on delivery"
+
     }
 }

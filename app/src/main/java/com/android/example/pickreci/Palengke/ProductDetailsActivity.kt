@@ -60,6 +60,7 @@ class ProductDetailsActivity : AppCompatActivity() {
             productUid = product.uid,
             quantity = totalQuantity,
             totalPrice =totalPrice,
+            name = product.productName
         )
         ref.child(key).setValue(cartProduct).addOnSuccessListener {
             Toast.makeText(this, "Added to cart", Toast.LENGTH_SHORT).show()
