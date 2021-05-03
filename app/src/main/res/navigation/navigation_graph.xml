@@ -32,8 +32,8 @@
         android:label="CART"
         tools:layout="@layout/fragment_cart_activity" />
     <fragment
-        android:id="@+id/nav_checkout"
-        android:name="com.android.example.pickreci.Cart.CartActivity"
-        android:label="CART"
+        android:id="@+id/nav_orders"
+        android:name="com.android.example.pickreci.Orders"
+        android:label="ORDERS"
         tools:layout="@layout/fragment_cart_activity" />
 </navigation>

@@ -17,7 +17,7 @@
         android:fontFamily="@font/cafe_font"
         android:shadowColor="#000000"
         android:shadowRadius="2"
-        android:text="Checkout"
+        android:text="ORDER"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
