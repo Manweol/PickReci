@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/type_add" />
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
@@ -89,5 +89,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/type_add"
+        android:layout_width="367dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/title_add"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/title_add"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

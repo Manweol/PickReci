@@ -329,18 +329,8 @@ class AddRecipeActivity : AppCompatActivity() {
     private fun initSpinner() {
         typesArrayList.add(Constants.BREAKFAST)
         typesArrayList.add(Constants.MERYENDA)
-<<<<<<< HEAD
-        typesArrayList.add(Constants.LUNCHANDDINNER)
-        typesArrayList.add(Constants.SEAFOOD)
-        typesArrayList.add(Constants.SEASONING)
-        typesArrayList.add(Constants.POULTRY)
-=======
         typesArrayList.add(Constants.LINNER)
-        typesArrayList.add(Constants.POULTRY)
-        typesArrayList.add(Constants.SEAFOOD)
-        typesArrayList.add(Constants.SEASONING)
->>>>>>> e385fa669314b2cf4a10f5a156b7394185ab24af
-        typesArrayList.add(Constants.VEGETABLES)
+
 
         //Add types to spinner
         val arrayAdapter: ArrayAdapter<String> =

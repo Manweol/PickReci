@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.android.example.pickreci.Market.CartActivity
 import com.android.example.pickreci.Models.CartProduct
 import com.android.example.pickreci.Models.Product
 import com.android.example.pickreci.R
@@ -12,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_product_details.*
 
 class ProductDetailsActivity : AppCompatActivity() {
 
-
+    private lateinit var addToCartActivity: CartActivity
     private lateinit var productImageView: ImageView
     private lateinit var producNameTextView: TextView
     private lateinit var productWeightTextView: TextView
@@ -29,7 +30,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         initValues(product)
         initSeekBar()
         initAddToCartButton(product)
-
+        addToCart(product)
 
     }
 
@@ -48,7 +49,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun addToCart(product: Product) {
-//        var cartProduct = CartProduct(uid = null, productUid =  product.uid, quantity = quantityTextView.text.toString().toInt() )
+//       var cartProduct = CartProduct(uid = null, productUid =  product.uid, quantity = quantityTextView.text.toString().toInt() )
+        initAddToCartButton(product)
     }
 
     private fun initSeekBar() {

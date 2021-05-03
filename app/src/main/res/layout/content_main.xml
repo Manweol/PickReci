@@ -20,6 +20,7 @@
             app:navigationIcon="@drawable/nav_icon"
             app:popupTheme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout

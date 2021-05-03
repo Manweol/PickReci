@@ -10,8 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".Admin.ProductActivity"></activity>
-        <activity android:name=".Admin.AddProductActivity"></activity>
+
+
         <activity android:name=".Admin.AdminActivity" >
 
 
@@ -39,11 +39,13 @@
         </activity>
         <activity android:name=".SpecificRecipePerType" />
         <activity android:name=".Palengke.ProductDetailsActivity" />
+        <activity android:name=".Admin.ProductActivity"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".Admin.RecipeActivity" />
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen" />
         <activity android:name=".SpecificDetailsActivity.SpecificDetailsActivity" />
+        <activity android:name=".Admin.AddProductActivity"/>
     </application>
 
 </manifest>

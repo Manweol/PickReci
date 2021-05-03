@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.android.example.pickreci.Constants
 import com.android.example.pickreci.Models.Product
 import com.android.example.pickreci.Models.RecipeModel
 import com.android.example.pickreci.R
@@ -18,6 +19,7 @@ import java.util.*
 class AddProductActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var imageButton: ImageButton
+    private lateinit var spinner: Spinner
     private lateinit var name: EditText
     private lateinit var price: EditText
     private lateinit var weight: EditText
@@ -26,6 +28,7 @@ class AddProductActivity : AppCompatActivity() {
     var isCreateMode: Boolean = true;
     var imageUri: Uri? = null
 
+    private var typesArrayList: ArrayList<String> = ArrayList()
 
     companion object {
         const val IMAGE_PICK_CODE = 1001
@@ -44,6 +47,7 @@ class AddProductActivity : AppCompatActivity() {
         }
         initButton(product)
         initImageButton()
+        initSpinner()
 
 
     }
@@ -69,6 +73,7 @@ class AddProductActivity : AppCompatActivity() {
             imageView.setImageURI(imageUri)
         }
     }
+
 
     private fun initButton(product: Product) {
         button.setOnClickListener {
@@ -154,11 +159,25 @@ class AddProductActivity : AppCompatActivity() {
         price.setText(product.price.toString())
         weight.setText(product.weight)
     }
+    private fun initSpinner() {
 
+        typesArrayList.add(Constants.POULTRY)
+        typesArrayList.add(Constants.SEAFOOD)
+        typesArrayList.add(Constants.SEASONING)
+        typesArrayList.add(Constants.VEGETABLES)
+
+        //Add types to spinner
+        val arrayAdapter: ArrayAdapter<String> =
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, typesArrayList)
+        spinner.adapter = arrayAdapter
+
+
+    }
 
     private fun init() {
         imageView = findViewById(R.id.imageView3)
         imageButton = findViewById(R.id.imageButton3)
+        spinner = findViewById(R.id.type_add)
         name = findViewById(R.id.editTextTextPersonName5)
         price = findViewById(R.id.editTextTextPersonName6)
         weight = findViewById(R.id.editTextTextPersonName7)
