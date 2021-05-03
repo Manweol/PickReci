@@ -1,15 +1,15 @@
 package com.android.example.pickreci.Palengke
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.android.example.pickreci.Market.CartActivity
-import com.android.example.pickreci.Models.CartProduct
+import com.android.example.pickreci.Cart.CartActivity
 import com.android.example.pickreci.Models.Product
 import com.android.example.pickreci.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_product_details.*
+import com.android.example.pickreci.Models.CartProduct as CartProduct1
 
 class ProductDetailsActivity : AppCompatActivity() {
 
@@ -21,6 +21,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     private lateinit var quantitySeekBar: SeekBar
     private lateinit var priceTextView: TextView
     private lateinit var button: Button
+    var totalPrice: Double = 0.0
+    var totalQuantity: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +30,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         val product = intent.getParcelableExtra<Product>(Palengke.TAG)!!
         init()
         initValues(product)
-        initSeekBar()
+        initSeekBar(product)
         initAddToCartButton(product)
-        addToCart(product)
 
     }
 
     private fun initAddToCartButton(product: Product) {
         button.setOnClickListener {
-            if (quantityTextView.text != "0") {
+            if (totalQuantity > 0) {
                 //Add the product to cart
                 addToCart(product)
             } else {
@@ -49,22 +50,47 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun addToCart(product: Product) {
-//       var cartProduct = CartProduct(uid = null, productUid =  product.uid, quantity = quantityTextView.text.toString().toInt() )
-        initAddToCartButton(product)
+        val currentUserUid = FirebaseAuth.getInstance().currentUser.uid
+        val ref = FirebaseDatabase.getInstance().getReference("cart/$currentUserUid")
+        val key = ref.push().key!!
+
+        //save this cartProduct
+        val cartProduct = CartProduct1(
+            uid = key,
+            productUid = product.uid,
+            quantity = totalQuantity,
+            totalPrice =totalPrice,
+        )
+        ref.child(key).setValue(cartProduct).addOnSuccessListener {
+            Toast.makeText(this, "Added to cart", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+
+
+
     }
 
-    private fun initSeekBar() {
+    private fun initSeekBar(product: Product) {
         quantitySeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                quantityTextView.text = "$progress"
+                totalQuantity = progress
+                totalPrice = (product.price)!! * totalQuantity
+                priceTextView.text = "Php $totalPrice"
+                quantityTextView.text = "$totalQuantity"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                quantityTextView.text = "${seekBar!!.progress}"
+                totalQuantity= seekBar!!.progress
+                totalPrice = (product.price)!! * totalQuantity
+                priceTextView.text = "Php $totalPrice"
+                quantityTextView.text = "$totalQuantity"
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                quantityTextView.text = "${seekBar!!.progress}"
+                totalQuantity = seekBar!!.progress
+                totalPrice = (product.price)!! * totalQuantity
+                priceTextView.text = "Php $totalPrice"
+                quantityTextView.text = "$totalQuantity"
 
             }
         })
@@ -75,6 +101,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         producNameTextView.text = "${product.productName}"
         productWeightTextView.text = "1pc (${product.weight})"
         priceTextView.text = "Php ${product.price}"
+        totalPrice = 1 * product.price!!
     }
 
     private fun init() {

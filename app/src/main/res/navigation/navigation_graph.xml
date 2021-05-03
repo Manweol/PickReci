@@ -28,12 +28,12 @@
         tools:layout="@layout/fragment_palengke" />
     <fragment
         android:id="@+id/nav_cart"
-        android:name="com.android.example.pickreci.Market.CartActivity"
+        android:name="com.android.example.pickreci.Cart.CartActivity"
         android:label="CART"
         tools:layout="@layout/fragment_cart_activity" />
     <fragment
         android:id="@+id/nav_checkout"
-        android:name="com.android.example.pickreci.Market.CartActivity"
+        android:name="com.android.example.pickreci.Cart.CartActivity"
         android:label="CART"
         tools:layout="@layout/fragment_cart_activity" />
 </navigation>
