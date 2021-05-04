@@ -12,9 +12,9 @@
         android:supportsRtl="true">
 
 
+        <activity android:name=".MainActivity">
 
-
-
+        </activity>
         <activity android:name=".Admin.AddRecipeActivity">
 
 <!--            <intent-filter>-->
@@ -29,19 +29,18 @@
 <!--                    android:scheme="https" />-->
 <!--            </intent-filter>-->
         </activity>
-     <activity android:name=".Admin.AdminActivity" >
+        <activity android:name=".Admin.AdminActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreenActivity"/>
         <activity android:name=".SpecificRecipePerType" />
         <activity android:name=".Palengke.ProductDetailsActivity" />
+        <activity android:name=".Admin.RecipeActivity"/>
         <activity android:name=".Admin.ProductActivity"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Admin.RecipeActivity" />
+        <activity android:name=".SplashScreenActivity" />
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen" />
         <activity android:name=".SpecificDetailsActivity.SpecificDetailsActivity" />

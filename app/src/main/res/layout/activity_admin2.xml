@@ -9,23 +9,29 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="324dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/background"
+        android:fontFamily="@font/cafe_font"
         android:text="RECIPES"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="324dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/background"
+        android:fontFamily="@font/cafe_font"
         android:text="PRODUCTS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
