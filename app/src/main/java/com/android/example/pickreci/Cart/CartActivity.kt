@@ -74,7 +74,7 @@ class CartActivity : Fragment() {
 
     private fun showDialog() {
         val dialogBuilder = AlertDialog.Builder(v.context)
-        dialogBuilder.setMessage("The only mode of payment avaialable right now is Cash on Delivery(COD). Do you still want to create order?")
+        dialogBuilder.setMessage("The only mode of payment available right now is Cash on Delivery(COD). Do you still want to create order?")
             .setCancelable(false)
             .setPositiveButton("Yes", DialogInterface.OnClickListener { _, _ ->
                 showDialogAgain()
