@@ -12,8 +12,7 @@
         android:supportsRtl="true">
 
 
-        <activity android:name=".Admin.AdminActivity" >
-
+        <activity android:name=".MainActivity">
 
         </activity>
         <activity android:name=".Admin.AddRecipeActivity">
@@ -30,7 +29,7 @@
 <!--                    android:scheme="https" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".Admin.AdminActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,9 +38,9 @@
         </activity>
         <activity android:name=".SpecificRecipePerType" />
         <activity android:name=".Palengke.ProductDetailsActivity" />
+        <activity android:name=".Admin.RecipeActivity"/>
         <activity android:name=".Admin.ProductActivity"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Admin.RecipeActivity" />
+        <activity android:name=".SplashScreenActivity" />
         <activity android:name=".RegistrationScreen.RegistrationScreen" />
         <activity android:name=".InitialScreen.InitialScreen" />
         <activity android:name=".SpecificDetailsActivity.SpecificDetailsActivity" />

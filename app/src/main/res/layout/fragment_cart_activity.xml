@@ -9,10 +9,10 @@
 
     <Button
         android:id="@+id/checkOutButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="313dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="16dp"
-        android:background="#005005"
+        android:background="@drawable/background"
         android:elevation="30dp"
         android:fontFamily="@font/cafe_font"
         android:shadowColor="#000000"
@@ -38,10 +38,13 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="TextView"
         android:visibility="invisible"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cartRv" />
 
     <TextView
         android:id="@+id/textView14"
@@ -51,9 +54,7 @@
         android:text="TOTAL PRICE (PHP): "
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/checkOutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/checkOutButton" />
 
     <TextView
         android:id="@+id/textView12"
@@ -62,9 +63,7 @@
         android:fontFamily="sans-serif-black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/checkOutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView14" />
+        app:layout_constraintEnd_toEndOf="@+id/checkOutButton" />
 
     <TextView
         android:id="@+id/textView15"
