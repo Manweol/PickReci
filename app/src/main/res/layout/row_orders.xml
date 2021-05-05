@@ -28,9 +28,9 @@
 
     <ListView
         android:id="@+id/lv"
-        android:layout_width="389dp"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="#AEF3B3"
+        android:background="#C2E8CA"
         android:elevation="20dp"
         android:outlineSpotShadowColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
