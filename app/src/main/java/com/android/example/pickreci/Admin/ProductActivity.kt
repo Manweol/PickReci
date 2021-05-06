@@ -1,3 +1,4 @@
+
 package com.android.example.pickreci.Admin
 
 import android.content.Intent
@@ -9,14 +10,9 @@ import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.pickreci.ItemViews.ProductItem
-import com.android.example.pickreci.Models.Product
-import com.android.example.pickreci.Models.RecipeModel
-import com.android.example.pickreci.Palengke.Palengke
-import com.android.example.pickreci.Palengke.ProductDetailsActivity
+import com.android.example.pickreci.Models.ProductModel
 import com.android.example.pickreci.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -36,7 +32,7 @@ class ProductActivity : AppCompatActivity() {
     private lateinit var button: Button
 
     companion object {
-        const val TAG = "ProductActivityTag"
+        const val TAG = "AdminActivityTag"
     }
 
 
@@ -51,7 +47,7 @@ class ProductActivity : AppCompatActivity() {
 
     private fun initButton() {
         button.setOnClickListener {
-            val product = Product(
+            val product = ProductModel(
                 productName = "create_mode"
             )
             val intent = Intent(applicationContext, AddProductActivity::class.java)
@@ -66,13 +62,13 @@ class ProductActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 adapter.clear()
                 snapshot.children.forEach { product ->
-                    val productData = product.getValue(Product::class.java)!!
+                    val productData = product.getValue(ProductModel::class.java)!!
                     adapter.add(ProductItem(productData))
                 }
 
                 adapter.setOnItemClickListener { item, view ->
                     val productItem = item as ProductItem
-                    val productClicked = productItem.product
+                    val productClicked = productItem.productModel
                     Log.i(TAG, "${productClicked.productName} : ${productClicked.uid}")
                     showPopupMenu(view, productClicked)
 
@@ -98,20 +94,20 @@ class ProductActivity : AppCompatActivity() {
 
     }
 
-    private fun showPopupMenu(view: View, product: Product) {
+    private fun showPopupMenu(view: View, productModel: ProductModel) {
         val popupMenu = PopupMenu(view.context, view)
         popupMenu.menuInflater.inflate(R.menu.edit_delete, popupMenu.menu)
 
         popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.delete_menu -> {
-                    val ref = FirebaseDatabase.getInstance().getReference("products/${product.uid}")
+                    val ref = FirebaseDatabase.getInstance().getReference("products/${productModel.uid}")
                     ref.removeValue()
                     Toast.makeText(this, "Recipe deleted", Toast.LENGTH_SHORT).show()
                 }
                 R.id.edit_menu -> {
                     val intent = Intent(applicationContext, AddProductActivity::class.java)
-                    intent.putExtra(TAG, product)
+                    intent.putExtra(TAG, productModel)
                     startActivity(intent)
 
                 }

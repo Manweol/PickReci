@@ -25,7 +25,7 @@
         android:layout_marginBottom="15dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="24dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
@@ -35,9 +35,9 @@
         android:id="@+id/productPriceTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="Actor"
         android:text="TextView"
-        android:textColor="#4CAF50"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/productNameText"
         app:layout_constraintTop_toBottomOf="@+id/productNameText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.android.example.pickreci.Models.CartProduct
-import com.android.example.pickreci.Models.Product
+import com.android.example.pickreci.Models.ProductModel
 import com.android.example.pickreci.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +16,6 @@ import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import org.w3c.dom.Text
 
 class CartItem(val cartProduct: CartProduct): Item<ViewHolder>() {
      lateinit var v: View
@@ -60,7 +59,7 @@ class CartItem(val cartProduct: CartProduct): Item<ViewHolder>() {
         val ref = FirebaseDatabase.getInstance().getReference("/products/${cartProduct.productUid}")
         ref.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val product = snapshot.getValue(Product::class.java)!!
+                val product = snapshot.getValue(ProductModel::class.java)!!
                 Picasso.get().load(product.productImg).into(image)
                 productName.text = product.productName
                 productQuantity.text = cartProduct.quantity.toString()

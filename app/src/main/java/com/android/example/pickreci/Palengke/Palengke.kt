@@ -10,11 +10,9 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import com.android.example.pickreci.DeleteLater
 import com.android.example.pickreci.ItemViews.ProductItem
-import com.android.example.pickreci.Models.Product
+import com.android.example.pickreci.Models.ProductModel
 import com.android.example.pickreci.R
-import com.android.example.pickreci.Recipe.Recipe
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -73,7 +71,7 @@ class Palengke : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 adapter.clear()
                 snapshot.children.forEach { product ->
-                    val productData = product.getValue(Product::class.java)!!
+                    val productData = product.getValue(ProductModel::class.java)!!
                     if (productData.productName!!.contains(query, ignoreCase = true)) {
                         adapter.add(ProductItem(productData))
                     }
@@ -101,7 +99,7 @@ class Palengke : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     adapter.clear()
                     snapshot.children.forEach { product ->
-                        val productData = product.getValue(Product::class.java)!!
+                        val productData = product.getValue(ProductModel::class.java)!!
                         adapter.add(ProductItem(productData))
                     }
 
@@ -126,7 +124,7 @@ class Palengke : Fragment() {
         recyclerView.adapter = adapter
         adapter.setOnItemClickListener { item, view ->
             val productItem = item as ProductItem
-            val productClicked = productItem.product
+            val productClicked = productItem.productModel
             val intent = Intent(v.context, ProductDetailsActivity::class.java)
             intent.putExtra(TAG, productClicked)
             startActivity(intent)

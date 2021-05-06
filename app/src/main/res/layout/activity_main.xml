@@ -24,7 +24,7 @@
         android:outlineSpotShadowColor="@color/black"
         app:elevation="30dp"
         app:headerLayout="@layout/nav_header"
-        app:itemIconTint="#00960F"
+        app:itemIconTint="@color/colorPrimary"
         app:itemIconSize="30dp"
         app:itemTextAppearance="@style/TextAppearance.AppCompat.Large"
         app:itemTextColor="#4C4B4B"

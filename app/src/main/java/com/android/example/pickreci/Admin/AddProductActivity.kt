@@ -8,8 +8,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.android.example.pickreci.Constants
-import com.android.example.pickreci.Models.Product
-import com.android.example.pickreci.Models.RecipeModel
+import com.android.example.pickreci.Models.ProductModel
 import com.android.example.pickreci.R
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -37,7 +36,7 @@ class AddProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
-        val product = intent.getParcelableExtra<Product>(ProductActivity.TAG)!!
+        val product = intent.getParcelableExtra<ProductModel>(ProductActivity.TAG)!!
         init()
         if (product.productName != "create_mode") {
             initValues(product)
@@ -47,7 +46,6 @@ class AddProductActivity : AppCompatActivity() {
         }
         initButton(product)
         initImageButton()
-        initSpinner()
 
 
     }
@@ -75,7 +73,7 @@ class AddProductActivity : AppCompatActivity() {
     }
 
 
-    private fun initButton(product: Product) {
+    private fun initButton(productModel: ProductModel) {
         button.setOnClickListener {
             progressBar.isVisible = true
             //check everything first
@@ -103,9 +101,9 @@ class AddProductActivity : AppCompatActivity() {
                 }
             } else {
                 if (imageUri == null) {
-                    updateProduct(product.productImg.toString(), product.uid.toString())
+                    updateProduct(productModel.productImg.toString(), productModel.uid.toString())
                 } else {
-                    uploadImageWithExistingUid(product.uid.toString(), imageUri!!)
+                    uploadImageWithExistingUid(productModel.uid.toString(), imageUri!!)
                 }
             }
         }
@@ -137,7 +135,7 @@ class AddProductActivity : AppCompatActivity() {
 
     private fun updateProduct(imageUrl: String, uid: String) {
         val ref = FirebaseDatabase.getInstance().getReference("/products/${uid}")
-        val product = Product(
+        val product = ProductModel(
             uid = uid,
             productImg = imageUrl,
             productName = name.text.toString(),
@@ -153,26 +151,13 @@ class AddProductActivity : AppCompatActivity() {
 
     }
 
-    private fun initValues(product: Product) {
-        Picasso.get().load(product.productImg).into(imageView)
-        name.setText(product.productName)
-        price.setText(product.price.toString())
-        weight.setText(product.weight)
+    private fun initValues(productModel: ProductModel) {
+        Picasso.get().load(productModel.productImg).into(imageView)
+        name.setText(productModel.productName)
+        price.setText(productModel.price.toString())
+        weight.setText(productModel.weight)
     }
-    private fun initSpinner() {
 
-        typesArrayList.add(Constants.POULTRY)
-        typesArrayList.add(Constants.SEAFOOD)
-        typesArrayList.add(Constants.SEASONING)
-        typesArrayList.add(Constants.VEGETABLES)
-
-        //Add types to spinner
-        val arrayAdapter: ArrayAdapter<String> =
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, typesArrayList)
-        spinner.adapter = arrayAdapter
-
-
-    }
 
     private fun init() {
         imageView = findViewById(R.id.imageView3)
