@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".Palengke.ProductDetailsActivity">
@@ -29,16 +29,16 @@
             app:layout_constraintTop_toBottomOf="@+id/productImageView"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/productNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/cafe_font"
-            android:text="Product's Name"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="@+id/quantitySeekBar"
-            app:layout_constraintTop_toBottomOf="@+id/productImageView" />
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cafe_font"
+        android:text="Product's Name"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/productQuantityTextView"
+        app:layout_constraintTop_toBottomOf="@+id/productImageView" />
 
         <TextView
             android:id="@+id/productQuantityTextView"
