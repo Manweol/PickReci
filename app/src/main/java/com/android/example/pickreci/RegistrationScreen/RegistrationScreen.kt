@@ -101,7 +101,7 @@ class RegistrationScreen : AppCompatActivity() {
             return
         }
         if (address.text.toString().isEmpty()) {
-            address.error = "Enter age"
+            address.error = "Enter Address"
             address.requestFocus()
             return
         }
@@ -178,7 +178,8 @@ class RegistrationScreen : AppCompatActivity() {
     }
 
     private fun saveToDatabase(url: String) {
-        val ref = FirebaseDatabase.getInstance().getReference("users/${user!!.uid}")
+        //val ref = FirebaseDatabase.getInstance().getReference("users/${user!!.uid}")
+        val ref = FirebaseDatabase.getInstance().getReference("/users/${user!!.uid}")
         val userModel = User(
             name = name.text.toString(),
             email = email.text.toString(),
