@@ -13,6 +13,9 @@ import com.android.example.pickreci.R
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_add_product.*
+import kotlinx.android.synthetic.main.row_product.*
+
 import java.util.*
 
 class AddProductActivity : AppCompatActivity() {
@@ -22,6 +25,7 @@ class AddProductActivity : AppCompatActivity() {
     private lateinit var name: EditText
     private lateinit var price: EditText
     private lateinit var weight: EditText
+    private lateinit var vendor: EditText
     private lateinit var button: Button
     private lateinit var progressBar: ProgressBar
     var isCreateMode: Boolean = true;
@@ -46,7 +50,7 @@ class AddProductActivity : AppCompatActivity() {
         }
         initButton(product)
         initImageButton()
-
+        //initSpinner()
 
     }
 
@@ -77,13 +81,18 @@ class AddProductActivity : AppCompatActivity() {
         button.setOnClickListener {
             progressBar.isVisible = true
             //check everything first
+            if (vendor.text.toString().isNullOrEmpty()) {
+                vendor.error = "Add Vendor"
+                vendor.requestFocus()
+                return@setOnClickListener
+            }
             if (name.text.toString().isNullOrEmpty()) {
                 name.error = "Add name"
                 name.requestFocus()
                 return@setOnClickListener
             }
             if (price.text.toString().isNullOrEmpty()) {
-                price.error = "Invalid proce"
+                price.error = "Invalid process"
                 price.requestFocus()
                 return@setOnClickListener
             }
@@ -139,6 +148,7 @@ class AddProductActivity : AppCompatActivity() {
             uid = uid,
             productImg = imageUrl,
             productName = name.text.toString(),
+            vendorName = vendor.text.toString(),
             price = price.text.toString().toDouble(),
             weight = weight.text.toString(),
         )
@@ -153,17 +163,20 @@ class AddProductActivity : AppCompatActivity() {
 
     private fun initValues(productModel: ProductModel) {
         Picasso.get().load(productModel.productImg).into(imageView)
+        vendor.setText(productModel.vendorName)
         name.setText(productModel.productName)
         price.setText(productModel.price.toString())
         weight.setText(productModel.weight)
     }
 
 
+
     private fun init() {
         imageView = findViewById(R.id.imageView3)
         imageButton = findViewById(R.id.imageButton3)
-        spinner = findViewById(R.id.type_add)
+//        spinner = findViewById(R.id.type_add)
         name = findViewById(R.id.editTextTextPersonName5)
+        vendor = findViewById(R.id.edtVendor)
         price = findViewById(R.id.editTextTextPersonName6)
         weight = findViewById(R.id.editTextTextPersonName7)
         button = findViewById(R.id.button7)
@@ -171,3 +184,18 @@ class AddProductActivity : AppCompatActivity() {
         progressBar.isVisible = false
     }
 }
+//private fun initSpinner() {
+  //  typesArrayList.add(Constants.FishVendor)
+    //typesArrayList.add(Constants.PorkBeefVendor)
+    //typesArrayList.add(Constants.ChickenVendor)
+    //typesArrayList.add(Constants.VegetableVendor)
+    //typesArrayList.add(Constants.GroceryVendor)
+
+
+    //Add types to spinner
+    //val arrayAdapter: ArrayAdapter<String> =
+      //  ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, typesArrayList)
+    //spinner.adapter = arrayAdapter
+
+
+//}

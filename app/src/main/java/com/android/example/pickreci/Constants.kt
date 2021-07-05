@@ -9,5 +9,11 @@ class Constants {
 
         const val COD= "Cash on delivery"
 
+      //  const val FishVendor = "Fish Vendor"
+        //const val PorkBeefVendor = "Pork & Beef Vendor"
+        //const val ChickenVendor = "Chicken Vendor"
+        //const val VegetableVendor = "Vegetable Vendor"
+        //const val GroceryVendor = "Grocery Vendor"
+
     }
 }

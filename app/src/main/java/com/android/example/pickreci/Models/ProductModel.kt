@@ -8,11 +8,13 @@ import kotlinx.android.parcel.Parcelize
 @IgnoreExtraProperties
 class ProductModel(
     val uid: String? = "",
+    val vendorName: String? = "",
     val productImg: String? = "",
     val productName: String? = "",
     val price: Double? = 0.00,
     val weight: String? = "",
     val type: String = "",
+
 ) : Parcelable {
 
 
