@@ -1,6 +1,7 @@
 
 package com.android.example.pickreci.Admin
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,17 +10,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.android.example.pickreci.InitialScreen.InitialScreen
 import com.android.example.pickreci.ItemViews.ProductItem
+import com.android.example.pickreci.LoginScreen.LoginScreenActivity
 import com.android.example.pickreci.Models.ProductModel
 import com.android.example.pickreci.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
+import javax.security.auth.login.LoginException
 
 class ProductActivity : AppCompatActivity() {
 
@@ -43,6 +49,44 @@ class ProductActivity : AppCompatActivity() {
         initRecyclerView()
         fetchProducts()
         initButton()
+        checkIfLoggedIn()
+
+        var signout = findViewById<Button>(R.id.signout)
+
+        signout.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setMessage("Do you want to sign out now?")
+                .setCancelable(true)
+                .setPositiveButton("Yes", DialogInterface.OnClickListener { _, _ ->
+                    FirebaseAuth.getInstance().signOut()
+                    val intent = Intent(this, LoginScreenActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    Toast.makeText(
+                        baseContext, "Signed out",
+                        Toast.LENGTH_LONG
+                    ).show()
+
+
+                })
+                .setNegativeButton("No", DialogInterface.OnClickListener { dialog, _ ->
+                    dialog.cancel()
+                })
+            val alert = dialogBuilder.create()
+            alert.setTitle("Sign out")
+            alert.show()
+        }
+
+    }
+
+
+    private fun checkIfLoggedIn() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser == null) {
+            val intent = Intent(this, LoginScreenActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
     }
 
     private fun initButton() {
@@ -103,7 +147,7 @@ class ProductActivity : AppCompatActivity() {
                 R.id.delete_menu -> {
                     val ref = FirebaseDatabase.getInstance().getReference("products/${productModel.uid}")
                     ref.removeValue()
-                    Toast.makeText(this, "Recipe deleted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Product deleted", Toast.LENGTH_SHORT).show()
                 }
                 R.id.edit_menu -> {
                     val intent = Intent(applicationContext, AddProductActivity::class.java)
@@ -116,4 +160,5 @@ class ProductActivity : AppCompatActivity() {
         })
         popupMenu.show()
     }
+
 }
